@@ -57,28 +57,6 @@ A central highlight of this project is the **formal mathematical analysis of I/O
 
 ---
 
-## 🛠️ PostgreSQL & PL/pgSQL Architecture
-
-The schema implements 29 distinct operations ($OP_1$ to $OP_{29}$) supported by custom constraints and procedural routines:
-
-### 🛡️ Domain & Temporal Integrity Constraints
-- **Citizen Age Verification:** Custom interval checking ensuring enrolled citizens are between 18 and 65 years old using a multi-unit `datediff()` function.
-- **Workflow Auditing:** CHECK constraints guaranteeing chronological integrity (`DataFine > DataInizio`, `DataStipula <= CURRENT_DATE`, `OraFineTurno > OraInizioTurno`).
-- **Office Naming Conventions:** Pattern matching constraints enforcing specific branch responsibilities (`LIKE 'Assunzione%'`).
-
-### ⚙️ PL/pgSQL Stored Procedures
-- `aggufficio(nomeuff, capouff)`: Transactionally initializes new offices, checks director eligibility, and reallocates department headcounts.
-- `aggpersonale(...)`: Adds staff members and atomically increments branch personnel statistics.
-- `eliminapersonale(mat)`: Safely removes an employee and decrements office counters.
-- `datediff(date_part, start_t, end_t)`: Generic date-part difference function across dynamic units (years, months, weeks, days, hours, minutes, seconds).
-
-### 📊 Analytical Views & Advanced Queries
-- `v1`: Tracks citizen engagement frequency within specific fiscal years.
-- `v2` & `stipendio_erogato_ufficio`: Aggregates and calculates department-level payroll expenditures to determine the most cost-efficient branch offices.
-- **Complex Subqueries:** Queries leveraging nested aggregations (`HAVING COUNT(*) >= ALL(...)`), outer joins, and grouping.
-
----
-
 ## 📁 Repository Structure
 
 ```text
