@@ -83,11 +83,11 @@ The schema implements 29 distinct operations ($OP_1$ to $OP_{29}$) supported by 
 
 ```text
 ├── docs/
-│   └── Relazione_Basi_di_Dati.pdf    # Complete academic documentation and technical report
+│   └── Basi_di_Dati.pdf           # Complete academic documentation and technical report
 ├── sql/
-│   ├── 01_schema.sql                 # DDL: Tables, PRIMARY KEYs, FOREIGN KEYs, CHECKs, datediff()
-│   ├── 02_functions.sql              # PL/pgSQL Stored Procedures (aggufficio, aggpersonale, etc.)
-│   └── 03_queries.sql                # DML: Insert scripts, Views, and OP1-OP29 operations
+│   ├── schema.sql                 # DDL: Tables, PRIMARY KEYs, FOREIGN KEYs, CHECKs, datediff()
+│   ├── functions.sql              # PL/pgSQL Stored Procedures (aggufficio, aggpersonale, etc.)
+│   └── queries.sql                # DML: Insert scripts, Views, and OP1-OP29 operations
 └── README.md
 ```
 
