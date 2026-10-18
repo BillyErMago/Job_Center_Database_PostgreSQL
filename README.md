@@ -98,8 +98,7 @@ psql -U postgres -d centro_impiego -f sql/03_queries.sql
 
 ---
 
-## 👥 Authors & Academic Context
-
+## 👥 Authors 
 - **Billal Nadi** - [BillyErMago](https://github.com/BillyErMago)
 - **Piercarmine De Marco**
 - **Redon Karakaci**
